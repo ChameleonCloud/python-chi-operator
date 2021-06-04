@@ -259,8 +259,8 @@ class NodeEnrollCommand(BaseCommand):
             \b
             [node01]
             # Give a name to the node class; Chameleon uses node class prefixes
-            # followed by specifiers, e.g. compute_haswell or gpu_rtx
-            node_type = compute_haswell
+            # followed by specifiers, e.g. compute_skylake or gpu_rtx
+            node_type = compute_skylake
             ipmi_username = root
             ipmi_password = hopefully_not_default
             ipmi_address = 10.10.10.1
