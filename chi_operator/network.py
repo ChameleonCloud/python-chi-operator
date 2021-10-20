@@ -241,7 +241,10 @@ class NetworkPublicIPStatusCommand(BaseCommand):
         return NetworkPublicIPStatusCommand().run()
 
     def _public_allocation_pools(self, neutron):
-        query = {"provider:physical_network": "public"}
+        query = {
+            "router:external": True,
+            "status": "ACTIVE",
+        }
         networks = neutron.list_networks(**query).get("networks")
         if not networks:
             raise ValueError("Could not find public network")
